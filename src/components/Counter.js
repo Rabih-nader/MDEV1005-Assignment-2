@@ -33,8 +33,8 @@ const Counter = () => {
 
   return (
     <div className="container mt-4">
-      <h1 className="text-center">Counter: {state.count}</h1>
-      <div className="d-flex justify-content-center">
+      <h1>Counter: {state.count}</h1>
+      <div className="d-flex">
         <button className="btn btn-primary mx-2" onClick={handleIncrement}>+</button>
         <button className="btn btn-danger mx-2" onClick={handleDecrement}>-</button>
         <button className="btn btn-secondary mx-2" onClick={handleReset}>Reset</button>

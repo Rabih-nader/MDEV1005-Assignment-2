@@ -20,6 +20,10 @@ function Notes() {
   return (
     <div>
       <h2>Notes</h2>
+      <Form className="d-flex mt-3">
+        <Form.Control type="text" placeholder="New note" value={newNote} onChange={(e) => setNewNote(e.target.value)} />
+        <Button variant="primary" className="ms-2" onClick={addNote}>Add</Button>
+      </Form>
       <ListGroup>
         {notes.map((note, index) => (
           <ListGroup.Item key={index} className="d-flex justify-content-between align-items-center">
@@ -28,10 +32,6 @@ function Notes() {
           </ListGroup.Item>
         ))}
       </ListGroup>
-      <Form className="d-flex mt-3">
-        <Form.Control type="text" placeholder="New note" value={newNote} onChange={(e) => setNewNote(e.target.value)} />
-        <Button variant="primary" className="ms-2" onClick={addNote}>Add</Button>
-      </Form>
     </div>
   );
 }
