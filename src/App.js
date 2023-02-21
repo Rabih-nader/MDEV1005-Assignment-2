@@ -11,7 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <BrowserRouter>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="warning" expand="lg" style={{ paddingLeft: '30px', paddingRight: '10px' }}>
+
         <Navbar.Brand href="/">My Website</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
