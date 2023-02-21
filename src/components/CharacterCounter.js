@@ -14,7 +14,7 @@ const CharacterCounter = () => {
     <div className="container my-3">
       <h1 className="text-danger">Character Counter</h1>
       <div className="input-group mb-3">
-        <input type="text" className="form-control" value={inputValue} onChange={handleInputChange} />
+        <textarea type="text" className="form-control" value={inputValue} onChange={handleInputChange} />
         <span className="input-group-text">{characterCount}</span>
       </div>
     </div>
