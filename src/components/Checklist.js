@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Checklist = () => {
   const [items, setItems] = useState([]);
@@ -21,23 +22,71 @@ const Checklist = () => {
     setItems(updatedItems);
   };
 
+  const handleDeleteAllItems = () => {
+    setItems([]);
+  };
+
   return (
-    <div>
-      <h1>Checklist</h1>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
-      <button onClick={handleAddItem}>Add Item</button>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>
-            <input
-              type="checkbox"
-              checked={item.isChecked}
-              onChange={() => handleToggleItem(index)}
-            />
-            <span>{item.label}</span>
-          </li>
-        ))}
-      </ul>
+    <div className="container">
+      <h1 className="mt-4 mb-3">Checklist</h1>
+      <div className="form-group">
+        <label htmlFor="inputItem">Item</label>
+        <div className="input-group">
+          <input
+            type="text"
+            className="form-control"
+            id="inputItem"
+            value={inputValue}
+            onChange={handleInputChange}
+          />
+          <div className="input-group-append">
+            <button
+              className="btn btn-primary"
+              type="button"
+              onClick={handleAddItem}
+            >
+              Add Item
+            </button>
+          </div>
+        </div>
+      </div>
+      {items.length > 0 && (
+        <div className="form-group">
+          <label>Items:</label>
+          <ul className="list-group">
+            {items.map((item, index) => (
+              <li
+                key={index}
+                className={`list-group-item ${
+                  item.isChecked ? 'list-group-item-success' : ''
+                }`}
+              >
+                <div className="form-check">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    checked={item.isChecked}
+                    onChange={() => handleToggleItem(index)}
+                  />
+                  <label className="form-check-label">{item.label}</label>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {items.length === 0 && <p>No items added yet.</p>}
+      {items.length > 0 && (
+        <div className="form-group">
+          <button
+            className="btn btn-danger"
+            type="button"
+            onClick={handleDeleteAllItems}
+          >
+            Delete All Items
+          </button>
+        </div>
+      )}
     </div>
   );
 };

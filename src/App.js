@@ -1,30 +1,28 @@
-//App page
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import React from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
 import Home from './pages/Home';
 import Tools from './pages/Tools';
 import Services from './pages/Services';
 import About from './pages/About';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/tools">Tools</Link>
-          </li>
-          <li>
-            <Link to="/services">Services</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="/">My Website</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/tools">Tools</Nav.Link>
+            <Nav.Link as={Link} to="/services">Services</Nav.Link>
+            <Nav.Link as={Link} to="/about">About</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
 
       <Switch>
         <Route path="/tools">

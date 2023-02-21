@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialState = { count: 0 };
 
@@ -31,11 +32,13 @@ const Counter = () => {
   };
 
   return (
-    <div>
-      <h1>Counter: {state.count}</h1>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
-      <button onClick={handleReset}>Reset</button>
+    <div className="container mt-4">
+      <h1 className="text-center">Counter: {state.count}</h1>
+      <div className="d-flex justify-content-center">
+        <button className="btn btn-primary mx-2" onClick={handleIncrement}>+</button>
+        <button className="btn btn-danger mx-2" onClick={handleDecrement}>-</button>
+        <button className="btn btn-secondary mx-2" onClick={handleReset}>Reset</button>
+      </div>
     </div>
   );
 };

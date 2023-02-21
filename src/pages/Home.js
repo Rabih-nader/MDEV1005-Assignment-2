@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function Home() {
   const [count, setCount] = useState(0);
@@ -12,12 +13,16 @@ function Home() {
   }, [count]);
 
   return (
-    <div>
-      <h1>Home Page</h1>
-      <p>Welcome to my React Router App!</p>
-      <p>You clicked {count} times</p>
-      <button onClick={handleClick}>Click me</button>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <h1>Home Page</h1>
+          <p>Welcome to my React Router App!</p>
+          <p>You clicked {count} times</p>
+          <Button onClick={handleClick}>Click me</Button>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

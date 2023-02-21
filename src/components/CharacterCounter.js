@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CharacterCounter = () => {
   const [inputValue, setInputValue] = useState('');
@@ -10,10 +11,12 @@ const CharacterCounter = () => {
   const characterCount = inputValue.length;
 
   return (
-    <div>
-      <h1>Character Counter</h1>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
-      <p>Character Count: {characterCount}</p>
+    <div className="container my-3">
+      <h1 className="text-danger">Character Counter</h1>
+      <div className="input-group mb-3">
+        <input type="text" className="form-control" value={inputValue} onChange={handleInputChange} />
+        <span className="input-group-text">{characterCount}</span>
+      </div>
     </div>
   );
 };

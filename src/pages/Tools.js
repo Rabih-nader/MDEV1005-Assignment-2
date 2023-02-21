@@ -6,11 +6,17 @@ import Checklist from '../components/Checklist';
 
 function Tools() {
   return (
-    <div>
+    <div className="container">
       <h1>Tools Page</h1>
-      <p>Welcome to Tools</p>
-      <Counter />
-      <CharacterCounter />
+      <p className="lead">Welcome to Tools</p>
+      <div className="row">
+        <div className="col-md-6">
+          <Counter />
+        </div>
+        <div className="col-md-6">
+          <CharacterCounter />
+        </div>
+      </div>
       <Notes />
       <Checklist />
     </div>
