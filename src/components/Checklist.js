@@ -30,7 +30,6 @@ const Checklist = () => {
     <div className="container">
       <h1 className="mt-4 mb-3">Checklist</h1>
       <div className="form-group">
-        <label htmlFor="inputItem">Item</label>
         <div className="input-group">
           <input
             type="text"

@@ -8,7 +8,7 @@ function Tools() {
   return (
     <div className="container">
       <h1>Tools Page</h1>
-      <p className="lead">Welcome to Tools</p>
+
       <div className="row">
         <div className="col-md-6">
           <Counter />
